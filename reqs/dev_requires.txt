@@ -1,0 +1,7 @@
+include requires.txt
+tox
+sphinx
+sphinxcontrib.spelling
+Sphinx-PyPI-upload
+Fabric
+hg-github

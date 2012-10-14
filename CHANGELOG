@@ -1,0 +1,41 @@
+What's new in 0.5.5
+===================
+
+* fix issue with traverse method
+
+What's new in 0.5.4
+===================
+
+* remove compatibility imports to separate packages
+
+What's new in 0.5.3
+===================
+
+* speedups
+
+What's new in 0.5.2
+===================
+
+* verify PyPy 1.8, Python 3.1 compatibility
+* made randomizing methods lazier
+* memoize some routines
+
+What's new in 0.5.6
+===================
+
+- selectively memoize
+
+What's new in 0.5.7
+===================
+
+- fix more issues with traversal
+
+What's new in 0.5.8
+===================
+
+- add new search expression support
+
+What's new in 0.5.9
+===================
+
+- update to stuf 0.9.0

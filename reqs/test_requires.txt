@@ -1,0 +1,3 @@
+hg+ssh://hg@bitbucket.org/lcrees/stuf@pu#egg=stuf
+nose
+coverage
