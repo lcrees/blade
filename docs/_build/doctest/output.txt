@@ -1,0 +1,57 @@
+Results of doctest builder run on 2012-10-14 23:09:37
+=====================================================
+
+Document: xreduce
+-----------------
+1 items passed all tests:
+   7 tests in default
+7 tests in 1 items.
+7 passed and 0 failed.
+Test passed.
+
+Document: xslice
+----------------
+1 items passed all tests:
+  17 tests in default
+17 tests in 1 items.
+17 passed and 0 failed.
+Test passed.
+
+Document: xfilter
+-----------------
+1 items passed all tests:
+  43 tests in default
+43 tests in 1 items.
+43 passed and 0 failed.
+Test passed.
+
+Document: xcmp
+--------------
+1 items passed all tests:
+  14 tests in default
+14 tests in 1 items.
+14 passed and 0 failed.
+Test passed.
+
+Document: xmath
+---------------
+1 items passed all tests:
+  20 tests in default
+20 tests in 1 items.
+20 passed and 0 failed.
+Test passed.
+
+Document: xmap
+--------------
+1 items passed all tests:
+  20 tests in default
+20 tests in 1 items.
+20 passed and 0 failed.
+Test passed.
+
+Doctest summary
+===============
+  121 tests
+    0 failures in tests
+    0 failures in setup code
+    0 failures in cleanup code

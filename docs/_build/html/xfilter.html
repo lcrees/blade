@@ -1,0 +1,389 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>blade.xfilter &mdash; blade  documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="blade  documentation" href="index.html" />
+    <link rel="next" title="blade.xmap" href="xmap.html" />
+    <link rel="prev" title="blade.xcmp" href="xcmp.html" /> 
+  </head>
+  <body>
+      <div class="header"><img class="rightlogo" src="_static/knife-smaller.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>blade  documentation</span></a></h1>
+        <h2 class="heading"><span>blade.xfilter</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="xcmp.html"><tt class="docutils literal docutils literal docutils literal"><span class="pre">blade.xcmp</span></tt></a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="xmap.html"><tt class="docutils literal"><span class="pre">blade.xmap</span></tt></a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="module-blade.xfilter">
+<span id="blade-xfilter"></span><h1><a class="reference internal" href="#module-blade.xfilter" title="blade.xfilter"><tt class="xref py py-class docutils literal"><span class="pre">blade.xfilter</span></tt></a><a class="headerlink" href="#module-blade.xfilter" title="Permalink to this headline">¶</a></h1>
+<p><tt class="xref py py-class docutils literal"><span class="pre">blade</span></tt> filtering operations</p>
+<dl class="function">
+<dt id="blade.xfilter.xattrs">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xattrs</tt><big>(</big><em>iterable</em>, <em>*names</em><big>)</big><a class="headerlink" href="#blade.xfilter.xattrs" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-attribute" title="(in Python v2.7)"><em class="xref std std-term">attribute</em></a> values from items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> that match
+an <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-attribute" title="(in Python v2.7)"><em class="xref std std-term">attribute</em></a> name in <cite>names</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>names</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; attribute names</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of values</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xattrs</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">stuf</span> <span class="kn">import</span> <span class="n">stuf</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stooge</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>   <span class="n">stuf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;moe&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">stuf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;larry&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="n">stuf</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;curly&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">60</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xattrs</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">))</span>
+<span class="go">[&#39;moe&#39;, &#39;larry&#39;, &#39;curly&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># multiple attribute names</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xattrs</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">))</span>
+<span class="go">[(&#39;moe&#39;, 40), (&#39;larry&#39;, 50), (&#39;curly&#39;, 60)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># no attrs named &#39;place&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xattrs</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;place&#39;</span><span class="p">))</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xfilter">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xfilter</tt><big>(</big><em>iterable</em>, <em>test</em>, <em>invert=False</em><big>)</big><a class="headerlink" href="#blade.xfilter.xfilter" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> matched by <cite>test</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>test</strong> &#8211; filtering <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#callable" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">callable</span></tt></a></li>
+<li><strong>invert</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; collect items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> that
+<cite>test``test</cite> is <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a> rather than <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> or, alternatively, <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a>
+items</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xfilter</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># filter for true values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xfilter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">[2, 4, 6]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># filter for false values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xfilter</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span>
+<span class="go">[1, 3, 5]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xgroup">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xgroup</tt><big>(</big><em>iterable</em>, <em>test=None</em><big>)</big><a class="headerlink" href="#blade.xfilter.xgroup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Group items in <cite>iterable</cite> using <cite>test</cite> as the <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-key-function" title="(in Python v2.7)"><em class="xref std std-term">key function</em></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>test</strong> &#8211; filtering <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#callable" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">callable</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of <a class="reference external" href="http://docs.python.org/2.7/library/collections.html#collections.namedtuple" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">namedtuple</span></tt></a>s of
+<tt class="docutils literal"><span class="pre">Group(keys=keys,</span> <span class="pre">groups=tuple)</span></tt></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xgroup</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># default grouping</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xgroup</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">]))</span>
+<span class="go">[Group(keys=1.3, groups=(1.3,)), Group(keys=2.1, groups=(2.1,))]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">floor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># use test for key function</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xgroup</span><span class="p">([</span><span class="mf">1.3</span><span class="p">,</span> <span class="mf">2.1</span><span class="p">,</span> <span class="mf">2.4</span><span class="p">],</span> <span class="n">floor</span><span class="p">))</span>
+<span class="go">[Group(keys=1.0, groups=(1.3,)), Group(keys=2.0, groups=(2.1, 2.4))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xitems">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xitems</tt><big>(</big><em>iterable</em>, <em>*keys</em><big>)</big><a class="headerlink" href="#blade.xfilter.xitems" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect values from items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> (usually a <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-sequence" title="(in Python v2.7)"><em class="xref std std-term">sequence</em></a> or
+<a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-mapping" title="(in Python v2.7)"><em class="xref std std-term">mapping</em></a>) that match a <strong>key</strong> found in <cite>keys</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>keys</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#str" title="(in Python v2.7)"><em>str</em></a>) &#8211; keys or indices</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of items</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xitems</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stooge</span> <span class="o">=</span> <span class="p">[</span>
+<span class="gp">... </span>   <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;moe&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">40</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;larry&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">50</span><span class="p">),</span>
+<span class="gp">... </span>   <span class="nb">dict</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;curly&#39;</span><span class="p">,</span> <span class="n">age</span><span class="o">=</span><span class="mi">60</span><span class="p">),</span>
+<span class="gp">... </span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># get items from mappings like dictionaries, etc...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xitems</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">))</span>
+<span class="go">[&#39;moe&#39;, &#39;larry&#39;, &#39;curly&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xitems</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;name&#39;</span><span class="p">,</span> <span class="s">&#39;age&#39;</span><span class="p">))</span>
+<span class="go">[(&#39;moe&#39;, 40), (&#39;larry&#39;, 50), (&#39;curly&#39;, 60)]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># get items from sequences like lists, tuples, etc...</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stooge</span> <span class="o">=</span> <span class="p">[[</span><span class="s">&#39;moe&#39;</span><span class="p">,</span> <span class="mi">40</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;larry&#39;</span><span class="p">,</span> <span class="mi">50</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;curly&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">]]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xitems</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="go">[&#39;moe&#39;, &#39;larry&#39;, &#39;curly&#39;]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xitems</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="go">[40, 50, 60]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xitems</span><span class="p">(</span><span class="n">stooge</span><span class="p">,</span> <span class="s">&#39;place&#39;</span><span class="p">))</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xmembers">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xmembers</tt><big>(</big><em>iterable</em>, <em>test</em>, <em>inverse=False</em><big>)</big><a class="headerlink" href="#blade.xfilter.xmembers" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect values shallowly from classes or objects in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-class" title="(in Python v2.7)"><em class="xref std std-term">class</em></a>es in
+<a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> matched by <cite>test</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>test</strong> &#8211; filtering <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#callable" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">callable</span></tt></a></li>
+<li><strong>invert</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; collect items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> that
+<cite>test</cite> is <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a> rather than <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of values</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xmembers</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stooges</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;moe&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stoog2</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;larry&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stoog3</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;curly&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">... </span>   <span class="k">class</span> <span class="nc">stoog4</span><span class="p">:</span>
+<span class="gp">... </span>       <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;beastly&#39;</span>
+<span class="gp">... </span>       <span class="n">age</span> <span class="o">=</span> <span class="mi">969</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xmembers</span><span class="p">([</span><span class="n">stoog3</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="ow">not</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;__&#39;</span><span class="p">)))</span> 
+<span class="go">[(&#39;age&#39;, 60), (&#39;name&#39;, &#39;curly&#39;), (&#39;stoog4&#39;, stoog3.stoog4)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xmro">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xmro</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xfilter.xmro" title="Permalink to this definition">¶</a></dt>
+<dd><p>Extract classes in the <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-method-resolution-order" title="(in Python v2.7)"><em class="xref std std-term">method resolution order</em></a> of classes or objects
+in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-class" title="(in Python v2.7)"><em class="xref std std-term">class</em></a>es in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-class" title="(in Python v2.7)"><em class="xref std std-term">class</em></a>es</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xmro</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stooges</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;moe&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stoog2</span><span class="p">(</span><span class="n">stooges</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;larry&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stoog3</span><span class="p">(</span><span class="n">stoog2</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;curly&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">... </span>   <span class="k">class</span> <span class="nc">stoog4</span><span class="p">:</span>
+<span class="gp">... </span>       <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;beastly&#39;</span>
+<span class="gp">... </span>       <span class="n">age</span> <span class="o">=</span> <span class="mi">969</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">results</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">xmro</span><span class="p">([</span><span class="n">stoog3</span><span class="p">]))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stooges</span> <span class="ow">in</span> <span class="n">results</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stoog3</span> <span class="ow">in</span> <span class="n">results</span>
+<span class="go">True</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">stoog2</span> <span class="ow">in</span> <span class="n">results</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xtraverse">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xtraverse</tt><big>(</big><em>iterable</em>, <em>test</em>, <em>invert=False</em><big>)</big><a class="headerlink" href="#blade.xfilter.xtraverse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Collect values from deeply <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-nested-scope" title="(in Python v2.7)"><em class="xref std std-term">nested scope</em></a>s from items in
+<a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> matched by <cite>test</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>test</strong> &#8211; filtering <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#callable" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">callable</span></tt></a></li>
+<li><strong>invert</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; collect items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> that
+<cite>test</cite> is <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a> rather than <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> for</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a> of <a class="reference external" href="http://docs.python.org/dev/library/collections.html#collections.ChainMap">ChainMaps</a> containing
+<a class="reference external" href="http://docs.python.org/2.7/library/collections.html#collections.OrderedDict" title="(in Python v2.7)"><tt class="xref py py-class docutils literal"><span class="pre">OrderedDict</span></tt></a></p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xtraverse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stooge</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;moe&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">40</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stooge2</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;larry&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">50</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">class</span> <span class="nc">stooge3</span><span class="p">:</span>
+<span class="gp">... </span>   <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;curly&#39;</span>
+<span class="gp">... </span>   <span class="n">age</span> <span class="o">=</span> <span class="mi">60</span>
+<span class="gp">... </span>   <span class="k">class</span> <span class="nc">stooge4</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+<span class="gp">... </span>       <span class="n">name</span> <span class="o">=</span> <span class="s">&#39;beastly&#39;</span>
+<span class="gp">... </span>       <span class="n">age</span> <span class="o">=</span> <span class="mi">969</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">test</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">... </span>   <span class="k">if</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="s">&#39;name&#39;</span><span class="p">:</span>
+<span class="gp">... </span>       <span class="k">return</span> <span class="bp">True</span>
+<span class="gp">... </span>   <span class="k">elif</span> <span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s">&#39;__&#39;</span><span class="p">):</span>
+<span class="gp">... </span>       <span class="k">return</span> <span class="bp">True</span>
+<span class="gp">... </span>   <span class="k">return</span> <span class="bp">False</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># using test while filtering for False values</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">xtraverse</span><span class="p">([</span><span class="n">stooge</span><span class="p">,</span> <span class="n">stooge2</span><span class="p">,</span> <span class="n">stooge3</span><span class="p">],</span> <span class="n">test</span><span class="p">,</span> <span class="n">invert</span><span class="o">=</span><span class="bp">True</span><span class="p">))</span> 
+<span class="go">[ChainMap(OrderedDict([(&#39;classname&#39;, &#39;stooge&#39;), (&#39;age&#39;, 40)])),</span>
+<span class="go">ChainMap(OrderedDict([(&#39;classname&#39;, &#39;stooge2&#39;), (&#39;age&#39;, 50)])),</span>
+<span class="go">ChainMap(OrderedDict([(&#39;classname&#39;, &#39;stooge3&#39;), (&#39;age&#39;, 60)]),</span>
+<span class="go">OrderedDict([(&#39;age&#39;, 969), (&#39;classname&#39;, &#39;stooge4&#39;)]))]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xfilter.xtruefalse">
+<tt class="descclassname">blade.xfilter.</tt><tt class="descname">xtruefalse</tt><big>(</big><em>iterable</em>, <em>test</em><big>)</big><a class="headerlink" href="#blade.xfilter.xtruefalse" title="Permalink to this definition">¶</a></dt>
+<dd><p>Divide items in <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a> into two <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a>s, the first
+everything <cite>test</cite> is <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> for and the second everything <cite>test</cite> is
+<a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a> for.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>iterable</strong> &#8211; <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterable" title="(in Python v2.7)"><em class="xref std std-term">iterable</em></a></li>
+<li><strong>test</strong> &#8211; filtering <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#callable" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">callable</span></tt></a></li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"><a class="reference external" href="http://docs.python.org/2.7/library/collections.html#collections.namedtuple" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">namedtuple</span></tt></a> of two <a class="reference external" href="http://docs.python.org/2.7/glossary.html#term-iterator" title="(in Python v2.7)"><em class="xref std std-term">iterator</em></a>s, one of
+items for which <cite>test</cite> is <a class="reference external" href="http://docs.python.org/2.7/library/constants.html#True" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">True</span></tt></a> and one for which <cite>test</cite> is
+<a class="reference external" href="http://docs.python.org/2.7/library/constants.html#False" title="(in Python v2.7)"><tt class="xref py py-data docutils literal"><span class="pre">False</span></tt></a>.</p>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xfilter</span> <span class="kn">import</span> <span class="n">xtruefalse</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">divide</span> <span class="o">=</span> <span class="n">xtruefalse</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">divide</span><span class="o">.</span><span class="n">true</span><span class="p">)</span>
+<span class="go">(2, 4, 6)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">tuple</span><span class="p">(</span><span class="n">divide</span><span class="o">.</span><span class="n">false</span><span class="p">)</span>
+<span class="go">(1, 3, 5)</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="xcmp.html"><tt class="docutils literal docutils literal docutils literal"><span class="pre">blade.xcmp</span></tt></a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="xmap.html"><tt class="docutils literal"><span class="pre">blade.xmap</span></tt></a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, L. C. Rees.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

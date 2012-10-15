@@ -1,0 +1,229 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>blade.xmath &mdash; blade  documentation</title>
+    
+    <link rel="stylesheet" href="_static/haiku.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/print.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/theme_extras.js"></script>
+    <link rel="top" title="blade  documentation" href="index.html" />
+    <link rel="next" title="blade.xreduce" href="xreduce.html" />
+    <link rel="prev" title="blade.xmap" href="xmap.html" /> 
+  </head>
+  <body>
+      <div class="header"><img class="rightlogo" src="_static/knife-smaller.png" alt="Logo"/><h1 class="heading"><a href="index.html">
+          <span>blade  documentation</span></a></h1>
+        <h2 class="heading"><span>blade.xmath</span></h2>
+      </div>
+      <div class="topnav">
+      
+        <p>
+        «&#160;&#160;<a href="xmap.html"><tt class="docutils literal docutils literal docutils literal"><span class="pre">blade.xmap</span></tt></a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="xreduce.html"><tt class="docutils literal"><span class="pre">blade.xreduce</span></tt></a>&#160;&#160;»
+        </p>
+
+      </div>
+      <div class="content">
+        
+        
+  <div class="section" id="module-blade.xmath">
+<span id="blade-xmath"></span><h1><a class="reference internal" href="#module-blade.xmath" title="blade.xmath"><tt class="xref py py-class docutils literal"><span class="pre">blade.xmath</span></tt></a><a class="headerlink" href="#module-blade.xmath" title="Permalink to this headline">¶</a></h1>
+<p><tt class="xref py py-class docutils literal"><span class="pre">blade</span></tt> mathing operations.</p>
+<dl class="function">
+<dt id="blade.xmath.xaverage">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xaverage</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xmath.xaverage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover average value of numbers in <cite>iterable</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; iterable object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a number</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xaverage</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xaverage</span><span class="p">([</span><span class="mi">10</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">45</span><span class="p">])</span>
+<span class="go">31.666666666666668</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xmath.xcount">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xcount</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xmath.xcount" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover how common each item in <cite>iterable</cite> is and the overall count of each
+item in <cite>iterable</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; iterable object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">Collects <a class="reference external" href="http://docs.python.org/2.7/library/collections.html#collections.namedtuple" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">namedtuple</span></tt></a> <tt class="docutils literal"><span class="pre">Count(least=int,</span>
+<span class="pre">most=int,</span> <span class="pre">overall=[(thing1,</span> <span class="pre">int),</span> <span class="pre">(thing2,</span> <span class="pre">int),</span> <span class="pre">...])</span></tt></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xcount</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">common</span> <span class="o">=</span> <span class="n">xcount</span><span class="p">([</span><span class="mi">11</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># least common thing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">common</span><span class="o">.</span><span class="n">least</span>
+<span class="go">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># most common thing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">common</span><span class="o">.</span><span class="n">most</span>
+<span class="go">11</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># total count for every thing</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">common</span><span class="o">.</span><span class="n">overall</span>
+<span class="go">[(11, 3), (3, 2), (5, 2), (7, 1)]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xmath.xinterval">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xinterval</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xmath.xinterval" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover the length of the smallest interval that can contain the value of
+every items in <cite>iterable</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; iterable object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a number</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xinterval</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xinterval</span><span class="p">([</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">11</span><span class="p">])</span>
+<span class="go">8</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xmath.xmedian">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xmedian</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xmath.xmedian" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover median value of numbers in <cite>iterable</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; iterable object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">a number</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xmedian</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xmedian</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+<span class="go">4</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xmedian</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">])</span>
+<span class="go">4.5</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xmath.xminmax">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xminmax</tt><big>(</big><em>iterable</em><big>)</big><a class="headerlink" href="#blade.xmath.xminmax" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover the minimum and maximum values among items in <cite>iterable</cite>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>iterable</strong> &#8211; iterable object</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><a class="reference external" href="http://docs.python.org/2.7/library/collections.html#collections.namedtuple" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">namedtuple</span></tt></a> <tt class="docutils literal"><span class="pre">MinMAx(min=value,</span> <span class="pre">max=value)</span></tt>.</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xminmax</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minmax</span> <span class="o">=</span> <span class="n">xminmax</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minmax</span><span class="o">.</span><span class="n">min</span>
+<span class="go">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">minmax</span><span class="o">.</span><span class="n">max</span>
+<span class="go">4</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="function">
+<dt id="blade.xmath.xsum">
+<tt class="descclassname">blade.xmath.</tt><tt class="descname">xsum</tt><big>(</big><em>iterable</em>, <em>start=0</em>, <em>precision=False</em><big>)</big><a class="headerlink" href="#blade.xmath.xsum" title="Permalink to this definition">¶</a></dt>
+<dd><p>Discover the total value of adding <cite>start</cite> and items in <cite>iterable</cite> together.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>iterable</strong> &#8211; iterable object</li>
+<li><strong>start</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#int" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">int</span></tt></a> or <a class="reference external" href="http://docs.python.org/2.7/library/functions.html#float" title="(in Python v2.7)"><tt class="xref py py-func docutils literal"><span class="pre">float</span></tt></a>) &#8211; starting number</li>
+<li><strong>precision</strong> (<a class="reference external" href="http://docs.python.org/2.7/library/functions.html#bool" title="(in Python v2.7)"><em>bool</em></a>) &#8211; add floats with extended precision</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">blade.xmath</span> <span class="kn">import</span> <span class="n">xsum</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># default behavior</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xsum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+<span class="go">6</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># with a starting mumber</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xsum</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="n">start</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="go">7</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c"># add floating points with extended precision</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">xsum</span><span class="p">([</span><span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">,</span> <span class="o">.</span><span class="mi">1</span><span class="p">],</span> <span class="n">precision</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="go">0.8</span>
+</pre></div>
+</div>
+</dd></dl>
+
+</div>
+
+
+      </div>
+      <div class="bottomnav">
+      
+        <p>
+        «&#160;&#160;<a href="xmap.html"><tt class="docutils literal docutils literal docutils literal"><span class="pre">blade.xmap</span></tt></a>
+        &#160;&#160;::&#160;&#160;
+        <a class="uplink" href="index.html">Contents</a>
+        &#160;&#160;::&#160;&#160;
+        <a href="xreduce.html"><tt class="docutils literal"><span class="pre">blade.xreduce</span></tt></a>&#160;&#160;»
+        </p>
+
+      </div>
+
+    <div class="footer">
+        &copy; Copyright 2012, L. C. Rees.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.3.
+    </div>
+  </body>
+</html>

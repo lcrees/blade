@@ -40,7 +40,7 @@ def docs():
     with lcd('docs/'):
         local('make clean')
         local('make html')
-        local('make linkcheck')
+#        local('make linkcheck')
         local('make doctest')
 
 

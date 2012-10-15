@@ -19,9 +19,9 @@ def getversion(fname):
 setup(
     name='blade',
     version=getversion('blade/__init__.py'),
-    description='Things go in. Things get bladed. Things go out.',
+    description='Powerful iterable processing tools extracted from knife.',
     long_description=open(join(getcwd(), 'README.rst'), 'r').read(),
-    keywords='filtering iterator functional',
+    keywords='filtering iterator functional interable',
     license='BSD',
     author='L. C. Rees',
     author_email='lcrees@gmail.com',
